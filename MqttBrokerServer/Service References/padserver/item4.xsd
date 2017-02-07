@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.1.25:9990/TerminalInfoReleaseWCF/ServiceOfSepcialInfo/?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Aid_SpecialTopicInfo">
+    <xs:sequence>
+      <xs:element name="AttachmentList" nillable="true" type="tns:ArrayOfAid_TopicAttachment" />
+      <xs:element name="MainPicUrl" nillable="true" type="xs:string" />
+      <xs:element name="SendFrom" type="xs:int" />
+      <xs:element name="SendTime" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="SendToList" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element name="TopicInfo" nillable="true" type="xs:string" />
+      <xs:element name="TopicInfoId" type="xs:int" />
+      <xs:element name="TopicType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Aid_SpecialTopicInfo" nillable="true" type="tns:Aid_SpecialTopicInfo" />
+  <xs:complexType name="ArrayOfAid_TopicAttachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Aid_TopicAttachment" nillable="true" type="tns:Aid_TopicAttachment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAid_TopicAttachment" nillable="true" type="tns:ArrayOfAid_TopicAttachment" />
+  <xs:complexType name="Aid_TopicAttachment">
+    <xs:sequence>
+      <xs:element name="Attachment" nillable="true" type="xs:base64Binary" />
+      <xs:element name="AttachmentName" nillable="true" type="xs:string" />
+      <xs:element name="AttachmentType" nillable="true" type="xs:string" />
+      <xs:element name="AttachmentUrl" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Aid_TopicAttachment" nillable="true" type="tns:Aid_TopicAttachment" />
+</xs:schema>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TerminalInfoReleaseWCF" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TerminalInfoReleaseWCF" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.1.25:9990/TerminalInfoReleaseWCF/ServiceOfSepcialInfo/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Model" />
+  <xs:complexType name="SpecialTopicInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Model" base="q1:Aid_SpecialTopicInfo">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SpecialTopicInfo" nillable="true" type="tns:SpecialTopicInfo" />
+</xs:schema>
